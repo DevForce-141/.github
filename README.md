@@ -9,6 +9,7 @@ For now, we are active in web space and following stacks:
 - AlpineJS
 - Tailwind CSS
 - Inertia JS (Only when we really need to fuck around with SPA in Laravel ecosytem)
+- WordPress
 - Angular JS
 - NodeJs
 - TypeScript
