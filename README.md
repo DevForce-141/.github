@@ -17,3 +17,15 @@ For now, we are active in web space and following stacks:
 ### For Force Members
 This organization is for collaboration. Anything that belongs to organization or something that you would like to share with organization, should go into relevant organization repositories.
 
+### For Inspiration
+
+#### For Component Based Development
+##### Tailwind UI Components
+This is good for inspiration on how we can build our component and pick up some coding style.
+* https://tailwindui.com/components
+
+##### Headless UI Components
+Headless UI is also an interesting idea considering that many components will have javascript part. So perhaps design Headless components first and then integrate into Tailwind & Livewire.
+* https://headlessui.com/
+
+  
