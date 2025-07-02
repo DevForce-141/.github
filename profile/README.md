@@ -46,6 +46,13 @@ We don't want ``definitions`` wars, hence we're putting them here.
 - Azure
 - Digital Ocean
 
+# 🌈 Guidelines for Requirements Providers/Clients
+These guidelines will make the life slightly easier for everyone involved.
+
+- If you're sharing something early stage, be sure to mention that it's early stage and acknowledge it's shortfalls. This will avoid lot of lurking which costs time and often creates confusion.
+- Be explicit as much as you can. The more explicit you're, the more chances that your message is being received as intended.
+- Don't assume that others will magically figure out. Give the context and forward knowledge/info to your best. For example, if you're providing a database dump, just mention the DBMS name and it's version.
+
 # 🌈 Development Guidelines
 We like to keep understand the system which we develop and we pay very good attention to semantics and naming which in turn allows us to stay clear of confusions and maintain a clean codebase. We've guidelines which span across different phases of project, not just codebase only.
 ## Understanding Project
