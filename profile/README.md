@@ -103,5 +103,10 @@ As communication is important in every aspect of life, it's important here too. 
 - Comply with PSR standards as much as possible for PHP.
 - Spatie has done pretty good and we tend to follow their [guidelines](https://spatie.be/guidelines/laravel-php) when it comes to Laravel ecosytem codebases.
 
+### Livewire
+- Setup one generic enough layout that all livewire components can use. If you need more variations, you can make relatively more specific layouts which extend the common layouts.
+- Prefer PHP Attributes for simpler values (non-dynamic OR Computation based), for example ``#[Title], #[Layout]``.
+- Strive for consistency, especially in your layout files as they'll be at the backbone of all your views. Make sure they are sensible and decently written.
+
 # 👩‍💻 Useful Resources
 - [Laracasts](https://laracasts.com/) (Good for Learning New stuff)
