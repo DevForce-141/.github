@@ -88,12 +88,14 @@ As communication is important in every aspect of life, it's important here too. 
 - Prefer using data attributes over css classes for dom manipulation. Otherwise, you'll be shit scared to remove classes from elements because you fear that it'll break some interactivity! CSS classes are something which you've to tweak over time for different reasons.
 
 ### Laravel
-- Do not use Repository Pattern unless it's absolutely necessary. Eloquent Models already act like Repository.
+- Do not use Repository Pattern unless it's absolutely necessary. Eloquent Models already act like Repository. There's a case where you're building a scalable function which would involve migrating tech; In such case, tech agnostic architecure is very helpful which allows you to adhere to contracts but swap out implementations OR route to specific implementations/tech layers.
 - Prefer Action Pattern to wrap every action/task in its class. It's highly recommended to namespace them based on the module. Use [Laravel Actions](https://www.laravelactions.com/) package for this.
 - Writing action classes gives the advantage of invoking that action as controller, job, command, listener etc. Otherwise, you would have to create job, command etc which would be just wrapper around your actual code.
 - You can use Services and Actions in same project. In such case, keep the configuration level and common code within a service and each specific act can be wrapper in an action.
 - It's okay to sometimes break your convention to reduce code navigation. For example if you have to write 5-10 lines in controller, you don't need an action or service there. It's okay.
 - If validation is long or advanced, then a form request should be used. Otherwise, validation logic can be kept in controller/action. Another option would be to create a single Validation Service that contains code for all validations.
+  Even though form requests do the same thing but you'll often be asking yourself ``Do I need form request for this little validation?`` and if you decide to stick to ``YES`` always; You'll end up with so many form requests. You may take
+  the approach for service and it's manageable where 1 function is equivalent of 1 form request and the code is 500-1000 lines long. After it, you may make specific/module wise validation services or shift to form requests as the projects is probably large scale now.
 - JSON resources are used to seamlessly convert models to JSON responses. Models that don't require to be sent as JSON, may not have the resources. Do not create JSON resource until you need it.
 - Controllers should handle requests and should be slim. They should do minimal things and act as really the controllers, delegating the tasks to other part of application, taking the output and eventually sending the response back to the requester/caller.
 - Purpose of Seeder/Factories is to have minimal state of application which is ready to use interactively.
