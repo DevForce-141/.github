@@ -99,8 +99,8 @@ As communication is important in every aspect of life, it's important here too. 
 - JSON resources are used to seamlessly convert models to JSON responses. Models that don't require to be sent as JSON, may not have the resources. Do not create JSON resource until you need it.
 - Controllers should handle requests and should be slim. They should do minimal things and act as really the controllers, delegating the tasks to other part of application, taking the output and eventually sending the response back to the requester/caller.
 - Purpose of Seeder/Factories is to have minimal state of application which is ready to use interactively.
-- Wrap all your interactions (GET, SET, FORGET) with Session in a central place. It's okay for it to be hundreds of line long. This way, you'll always have a single place to check when you're refactoring.
-- Wrap all your interactions (GET, SET, FORGET) with Cache in a central place. It's okay for it to be hundreds of line long. This way, you'll always have a single place to check when you're refactoring.
+- Wrap all your interactions (GET, SET, FORGET) with ``Session`` in a central place. It's okay for it to be hundreds of line long. This way, you'll always have a single place to check when you're refactoring.
+- Wrap all your interactions (GET, SET, FORGET) with ``Cache`` in a central place. It's okay for it to be hundreds of line long. This way, you'll always have a single place to check when you're refactoring.
 - Testing is very important and it should be done early on. It'll pay off with future development. In an idea world, we run test suite after every task and the tests should be green; giving us the confidence that we didn't break anything.
 - Comply with PSR standards as much as possible for PHP.
 - Spatie has done pretty good and we tend to follow their [guidelines](https://spatie.be/guidelines/laravel-php) when it comes to Laravel ecosytem codebases.
