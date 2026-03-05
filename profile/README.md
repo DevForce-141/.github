@@ -351,6 +351,7 @@ jobs:
 
 - **Create New Project with Code Quality Preconfigured** using our starter kit; Use command ``laravel new ProjectName --using=devforce141/code-quality-starter-kit``
   > Note: Using the starter kit has the benefit of using it in latest way as its updated!
+- **Code Quality setup for existing projects** is simplified via 1 run of [bash script from code quality starter kit](https://github.com/DevForce-141/Code-Quality-Starter-Kit/blob/main/code-quality-setup-for-existing-project.sh)
 - **Do not use Repository Pattern** unless absolutely necessary. Eloquent Models already act as repositories. The exception is when building a tech-agnostic layer to allow swapping implementations via contracts.
 
 - **Prefer the Action Pattern** for all tasks. Use [Laravel Actions](https://www.laravelactions.com/). Namespace actions by module.
