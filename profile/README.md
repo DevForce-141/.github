@@ -1,5 +1,9 @@
 # DevForce 141 — Guidelines & Standards
 
+## 📋 Contents
+
+[Introduction](#introduction) · [Tech Stack](#tech-stack) · [Client Guidelines](#client-guidelines) · [Development Guidelines](#development-guidelines) · [Understanding the Project](#understanding-the-project) · [Communication](#communication) · [AI-Assisted Development](#ai-assisted-development) · [Code Quality Pipeline](#code-quality-pipeline) · [Codebase](#codebase) · [Useful Resources](#useful-resources) · [Claude Code Setup](#claude-code-setup)
+
 # 🙋‍♀️ Introduction
 
 DevForce 141 is a special task force of developers. At least, this is what we like to think of it. We are all friends joining up together to make great stuff, with a hope that the stuff will help us make even greater stuff. 🙂
@@ -423,3 +427,103 @@ class Dashboard extends Component
 ---
 
 > 📝 **This is a living document.** When you encounter a situation not covered here, or where a guideline proved wrong in practice, raise it. We update the guidelines, not just the code. Moreover, the Code Reviews & AI part is new here and actively being explored; Once stabilized, proper docs will be written regarding it here!
+
+# 🤖 Claude Code Setup
+
+We use **Laravel Boost** to manage AI context. Boost auto-generates `CLAUDE.md` from installed skills and your project's detected packages — so there's nothing to manually maintain.
+
+---
+
+## Quickstart (new project)
+
+```bash
+composer require laravel/boost --dev
+php artisan boost:install   # interactive — pick features + agents
+```
+
+`boost:install` detects your packages and generates the right context files automatically. Select **Claude Code** when it asks which agents you use.
+
+Run periodically to keep guidelines fresh:
+
+```bash
+php artisan boost:update
+```
+
+> ⚠️ **Add Boost's generated files to `.gitignore`** — they are regenerated on every `boost:install` / `boost:update`, so tracking them adds noise:
+>
+> ```
+> CLAUDE.md
+> AGENTS.md
+> .mcp.json
+> junie/
+> boost.json
+> ```
+
+---
+
+## MCP Server (Boost ↔ Claude Code)
+
+Boost exposes an MCP server that gives Claude live access to your app — routes, schema, models, Artisan commands, Tinker execution, and the full Laravel docs API.
+
+`boost:install` configures this automatically for Claude Code. If it didn't:
+
+```bash
+# Standard (Herd / local PHP)
+claude mcp add -s local -t stdio laravel-boost php artisan boost:mcp
+
+# Sail / Docker
+claude mcp add -s local -t stdio laravel-boost docker exec app php artisan boost:mcp
+```
+
+Verify it's connected inside Claude Code:
+
+```
+/mcp
+```
+
+You should see `laravel-boost` listed with its tools (search-docs, database-query, tinker, list-artisan-commands, etc.).
+
+> **Scope note:** Use `-s local` (not `project`). Project-scoped `.mcp.json` has known issues with some Claude Code versions, and local scope avoids committing it.
+
+---
+
+## Our Skill
+
+Our team conventions live in a single Boost-compatible skill:
+
+**Repo:** `DevForce-141/laravel-standards`  
+**File path:** `skills/SKILL.md` ← Boost/skills.sh picks it up from here
+
+Install it on any project:
+
+```bash
+php artisan boost:add-skill DevForce-141/laravel-standards
+```
+
+This injects our rules (Action Pattern, centralised Session/Cache, semantic naming, enums, data attributes, UTC, arch tests, commit discipline) into the context Boost builds for Claude.
+
+---
+
+## Skills Matrix
+
+Install skills based on what your project actually uses. Keep it lean — Boost's built-in guidelines + our skill cover the base. Add from this table only when relevant.
+
+| You're using | Install this skill | What it adds |
+|---|---|---|
+| Any Laravel 11/12 project | `thienanblog/laravel-11-12-app-guidelines` | Boost MCP tool usage, stack-aware workflows |
+| Eloquent (always) | `iserter/eloquent-best-practices-iserter` | N+1 prevention, eager loading, query scopes |
+| Pest with TDD | `iserter/laravel-tdd-iserter` | Test-first workflow, red-green-refactor in Laravel |
+| Inertia + React | `asyrafhussin/laravel-inertia-react` | `useForm`, shared data, persistent layouts |
+| **Always** | `DevForce-141/laravel-standards` | Our team rules |
+
+```bash
+# Example: TALL stack project
+php artisan boost:add-skill thienanblog/laravel-11-12-app-guidelines
+php artisan boost:add-skill iserter/eloquent-best-practices-iserter
+php artisan boost:add-skill DevForce-141/laravel-standards
+
+# Then let Boost regenerate CLAUDE.md with all skills injected
+php artisan boost:update
+```
+
+Browse the full directory at [skills.laravel.cloud](https://skills.laravel.cloud) if you need something outside this table (Filament, Volt, Inertia+Vue, etc.).
