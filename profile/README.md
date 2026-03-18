@@ -504,24 +504,7 @@ This injects our rules (Action Pattern, centralised Session/Cache, semantic nami
 
 ---
 
-## Skills Matrix
-
-Install skills based on what your project actually uses. Keep it lean — Boost's built-in guidelines + our skill cover the base. Add from this table only when relevant.
-
-| You're using | Install this skill | What it adds |
-|---|---|---|
-| Any Laravel 11/12 project | `thienanblog/laravel-11-12-app-guidelines` | Boost MCP tool usage, stack-aware workflows |
-| Eloquent (always) | `iserter/eloquent-best-practices-iserter` | N+1 prevention, eager loading, query scopes |
-| Pest with TDD | `iserter/laravel-tdd-iserter` | Test-first workflow, red-green-refactor in Laravel |
-| Inertia + React | `asyrafhussin/laravel-inertia-react` | `useForm`, shared data, persistent layouts |
-| **Always** | `DevForce-141/laravel-standards` | Our team rules |
-
 ```bash
-# Example: TALL stack project
-php artisan boost:add-skill thienanblog/laravel-11-12-app-guidelines
-php artisan boost:add-skill iserter/eloquent-best-practices-iserter
-php artisan boost:add-skill DevForce-141/laravel-standards
-
 # Then let Boost regenerate CLAUDE.md with all skills injected
 php artisan boost:update
 ```
