@@ -119,6 +119,12 @@ We embrace AI tooling as a force multiplier, but with discipline. The goal is to
 - **[Claude](https://claude.ai) / [ChatGPT](https://chatgpt.com)** — Architecture discussions, code review, debugging
 - **[Laravel Idea](https://plugins.jetbrains.com/plugin/13441-laravel-idea)** — Laravel-specific intelligence in PhpStorm
 
+## AI Guidelines (Human Written - Based on Experience)
+1. Scan the project, read it, understand it's architecture, conventions.
+2. In regard to above, Pay special attention to helper functions, enums, constants, config values. Use these or prefer to create values/settings there (if appropriate) and use/reference from there.
+3. Understand, Respect and strive for ``source of truth``. Prefer a single source of truth.
+4. Follow these guidelines as high priority unless asked otherwise. If you decide to go against these given there's a very strong reason AND/OR due to roadblocks, you must communicate it to the user.
+
 ### AI Workflow Guidelines
 
 **Always provide context when prompting.**
