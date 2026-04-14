@@ -125,6 +125,9 @@ We embrace AI tooling as a force multiplier, but with discipline. The goal is to
 3. Understand, Respect and strive for ``source of truth``. Prefer a single source of truth.
 4. Follow these guidelines as high priority unless asked otherwise. If you decide to go against these given there's a very strong reason AND/OR due to roadblocks, you must communicate it to the user.
 
+### Closing Note Guidelines (Conclusive and applied at the end - overriding others)
+1. When you find YOUR error/mistake, an oversight; Take note of it and find it's fix. Take note of the problem and fix to best serve your memory efficiently. Such mistakes should not be repeated again as you're to learn from your mistakes.
+
 ### AI Workflow Guidelines
 
 **Always provide context when prompting.**
