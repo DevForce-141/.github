@@ -127,6 +127,7 @@ We embrace AI tooling as a force multiplier, but with discipline. The goal is to
 
 ### Closing Note Guidelines (Conclusive and applied at the end - overriding others)
 1. When you find YOUR error/mistake, an oversight; Take note of it and find it's fix. Take note of the problem and fix to best serve your memory efficiently. Such mistakes should not be repeated again as you're to learn from your mistakes.
+2. Never Use goddamn `’`, and ``’’`` as single and double quotes in codebase.  You'll be fired right there if you ever did this!
 
 ### AI Workflow Guidelines
 
