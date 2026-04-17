@@ -61,6 +61,15 @@ We love Laravel and its ecosystem — specifically the **TALL Stack** (Tailwind 
 
 ---
 
+# General Flow for Project Start, Delivery and in-between
+1. Get the understanding of the project. Get the stakeholder perspective and identify the goals/objective and the underlying dynamics behind the words.
+2. Use the AI for constructive criticism. Keep in mind that this exercise is done to uncover potential pitfalls, blind spots. Even if it provides 20% usable/meaningful points,
+   it is worth it despite false positives and unrelated things. The same would happen if a human was to do it because of the very nature of the task.
+3. Once development is complete, have the AI attack/criticize the Language in UI and the UI. The same mental model applies to this task as described above. Since during dev, you wear
+   development and architectural hat alongside sarcastic juice sips, your language in the application would require a fresh perspective to make it friendly and simple for non-tech users.
+
+---
+
 # 🌈 Guidelines for Requirements Providers / Clients
 
 - If you're sharing something early-stage, say so explicitly and acknowledge its shortfalls. This avoids confusion and saves everyone's time.
